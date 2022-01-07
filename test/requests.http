@@ -1,0 +1,25 @@
+### Get Request
+GET http://localhost:4004/public/data HTTP/1.1
+
+### Upsert
+PUT http://localhost:4004/public/data(id='4',code='4') HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "4",
+    "code": "4",
+    "name": "Desc 4"
+}
+
+### Insert
+POST http://localhost:4004/public/data HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "4",
+    "code": "4",
+    "name": "Desc 4"
+}
+
+### Delete
+DELETE http://localhost:4004/public/data(id='4',code='4') HTTP/1.1

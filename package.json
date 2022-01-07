@@ -1,0 +1,36 @@
+{
+  "name": "pg-app",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "4.6.4",
+    "cds-pg": "0.0.48",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "database"
+      },
+      "database": {
+        "impl": "cds-pg",
+        "model": [
+          "srv"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "start": "cds run",
+    "start:docker": "docker-compose up -d",
+    "deploy:pg": "npx cds-pg deploy srv --to db",
+    "test:sqlite": "cds run --in-memory",
+    "start:podman": "podman-compose up -d"
+  }   
+}
